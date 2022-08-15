@@ -1,0 +1,48 @@
+{
+  "id": "71b6cfc9-84d0-4966-ace5-530b5eef3d39",
+  "name": "ETPOSExtension",
+  "publisher": "Default publisher",
+  "version": "18.2.0.1000264",
+  "brief": "",
+  "target": "OnPrem",
+  "description": "",
+  "privacyStatement": "",
+  "propagateDependencies": true,
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies":  [
+    {
+        "id":  "5ecfc871-5d82-43f1-9c54-59685e82318d",
+        "publisher":  "LS Retail",
+        "name":  "LS Central",
+        "version":  "18.2.0.0"
+    }
+    ,
+    {
+        "id":  "2a0547fa-f60f-401d-b1fe-c7c4be8fb230",
+        "publisher":  "LS Retail",
+        "name":  "LS Central System App",
+        "version":  "18.2.0.0"
+    }
+],
+"internalsVisibleTo":  [
+          {
+              "id":  "9e544bc2-14ac-4edd-ae5c-80ce8906ad59",
+              "publisher":  "LS Retail",
+              "name":  "LS Central Autotests"
+          }
+      ],
+  "screenshots": [],
+  "platform":  "18.0.0.0",
+  "application":  "18.3.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to":90149
+    }
+  ],
+  "showMyCode": true,
+  "runtime": "7.0"
+}

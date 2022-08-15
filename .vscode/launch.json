@@ -1,0 +1,44 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+       {
+            "name": "HaythemLocal",
+            "request": "launch",
+            "type": "al",
+            "environmentType": "OnPrem",
+            "server": "http://localhost:8091/BC180/",
+            "serverInstance": "BC180",
+            "authentication": "Windows",
+            "port": 5049,
+            "startupObjectId": 50100,
+            "startupObjectType": "Page",
+            "breakOnError": true,
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "tenant": "default",
+            "schemaUpdateMode": "ForceSync",
+            
+        },
+        {
+             
+               "name": "BYc_PROD",
+               "request": "launch",
+               "type": "al",
+               "environmentType": "OnPrem",
+               "server": "http://172.16.30.215/BYS_PROD/",
+               "serverInstance": "BYS_PROD",
+               "authentication": "UserPassword",
+              "startupObjectId": 22,
+              "startupObjectType": "Page",
+               "breakOnError": true,
+               "launchBrowser": true,
+               "enableLongRunningSqlStatements": true,
+               "enableSqlInformationDebugger": true,
+              "tenant": "default",
+               "port": 7049,
+                "schemaUpdateMode": "ForceSync"
+            }
+        
+    ]
+}
