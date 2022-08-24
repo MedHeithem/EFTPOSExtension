@@ -26,13 +26,6 @@
         "name":  "LS Central System App",
         "version":  "18.2.0.0"
     }
-    ,
-    {
-      "id":  "eb2ead07-f86a-4c11-bfb7-630bbcb2e992",
-      "publisher":  "Default publisher",
-      "name":  "BY DEV",
-      "version":  "1.0.0.0"
-  }
 ],
 "internalsVisibleTo":  [
           {

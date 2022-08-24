@@ -15,27 +15,30 @@ codeunit 90102 ETF_Pos_Codeunit
 
     begin
         Result := amountToEft.Satus::Fail;
+        if (pAmount < 100000) then begin
+            amountToEft.InsertData(pSlipNo, pClientID, pCurrencyCode, pAmount, pCashBack, pVat, pCustomData, pStore, pTerminal);
+            Commit();
+            Sleep(1000);
+            Hyperlink('http://localhost:84/run.htm');
 
-        amountToEft.InsertData(pSlipNo, pClientID, pCurrencyCode, pAmount, pCashBack, pVat, pCustomData, pStore, pTerminal);
-        Commit();
-        Sleep(1000);
-        Hyperlink('http://localhost:84/run.htm');
-
-        //ajouter loader()
-        if Dialog.Confirm('operation Terminée?', true) then; // begin
+            //ajouter loader()
+            if Dialog.Confirm('Operation Terminée?', true) then; // begin
 
 
-        amountToEft.Reset();
-        amountToEft.SetFilter(SlipNo, pSlipNo);
-        amountToEft.SetFilter(ClientID, pClientID);
-        if amountToEft.FindLast() then
-            Result := amountToEft.Satus;
+            amountToEft.Reset();
+            amountToEft.SetFilter(SlipNo, pSlipNo);
+            amountToEft.SetFilter(ClientID, pClientID);
+            if amountToEft.FindLast() then
+                Result := amountToEft.Satus;
 
-        // Message('%1', amountToEft.Satus);
+            // Message('%1', amountToEft.Satus);
 
-        //end;
-        CloseETFPOS();
-        //Message('%1', amountToEft.Satus);
+            //end;
+            CloseETFPOS();
+
+        end
+        else
+            Message('%1 DT:Dépassement du montant autorisé!. basculez vers la carte bancaire manuelle', pAmount);
 
 
 
