@@ -59,7 +59,7 @@ codeunit 90103 "SubscriberTest"
             end
             else begin
                 message('transaction échouée');
-                TenderTypeCode := '12';
+                TenderTypeCode := '9';
                 exit;
             end;
 
@@ -80,7 +80,7 @@ codeunit 90103 "SubscriberTest"
         end
         else begin
             message('Opération annulée');
-            TenderTypeCode := '12';
+            TenderTypeCode := '9';
 
             exit;
         end;
