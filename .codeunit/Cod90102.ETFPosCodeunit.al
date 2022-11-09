@@ -11,7 +11,7 @@ codeunit 90102 ETF_Pos_Codeunit
     var
 
         amountToEft: Record "Amout TO EFT";
-
+        repdlO: DotNet REP;
 
     begin
         Result := amountToEft.Satus::Fail;
@@ -19,7 +19,10 @@ codeunit 90102 ETF_Pos_Codeunit
             amountToEft.InsertData(pSlipNo, pClientID, pCurrencyCode, pAmount, pCashBack, pVat, pCustomData, pStore, pTerminal);
             Commit();
             Sleep(1000);
-            Hyperlink('http://localhost:84/run.htm');
+            //  Hyperlink('http://localhost:84/run.htm');
+            // Hyperlink('webrun:d:\\TPE\\TPEDLL.exe');
+            Hyperlink('RunFromBC:/c' + 'C:/Users/HFEZZANI/Desktop/TPE/TPE/TPEDLL.exe');
+            //repdlO.EFTPOS().ExecuteEFTRequest();
 
             //ajouter loader()
             if Dialog.Confirm('Operation Terminée?', true) then; // begin
